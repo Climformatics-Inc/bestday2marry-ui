@@ -1,0 +1,43 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.applicationPage {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    color: #222;
+}
+
+.header,
+.contents,
+.footer {
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-right: 15px;
+
+    .description {
+        font-size: 12px;
+    }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
