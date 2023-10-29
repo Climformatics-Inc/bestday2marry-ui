@@ -16,7 +16,6 @@ function App() {
         <Route path="/">
           <Locations />
         </Route>
-
       </Switch>
     </Router>
   );
