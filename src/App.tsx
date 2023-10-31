@@ -1,18 +1,16 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import './App.css';
-import Locations from './locations/Locations';
-import LocationInformation from './location-information/LocationInformation';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import Locations from "./locations/Locations";
+import LocationInformation from "./location-information/LocationInformation";
 
-function App() {
+function App(): JSX.Element {
   return (
     <Router>
       <Switch>
-        <Route path="/location-information" exact={true}><LocationInformation /></Route>
+        <Route path="/location-information" exact={true}>
+          <LocationInformation />
+        </Route>
         <Route path="/">
           <Locations />
         </Route>
