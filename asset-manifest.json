@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/bestday2marry-ui/static/css/main.0de59fc5.css",
+    "main.js": "/bestday2marry-ui/static/js/main.42f57ed4.js",
+    "static/js/354.6a39bf8e.chunk.js": "/bestday2marry-ui/static/js/354.6a39bf8e.chunk.js",
+    "static/js/787.9414bf37.chunk.js": "/bestday2marry-ui/static/js/787.9414bf37.chunk.js",
+    "index.html": "/bestday2marry-ui/index.html",
+    "main.0de59fc5.css.map": "/bestday2marry-ui/static/css/main.0de59fc5.css.map",
+    "main.42f57ed4.js.map": "/bestday2marry-ui/static/js/main.42f57ed4.js.map",
+    "787.9414bf37.chunk.js.map": "/bestday2marry-ui/static/js/787.9414bf37.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0de59fc5.css",
+    "static/js/main.42f57ed4.js"
+  ]
+}
