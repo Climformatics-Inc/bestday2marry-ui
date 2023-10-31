@@ -58,11 +58,12 @@ export const MarriageLocations: React.FC<Props> = (props: Props) => {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-locations-script",
-    googleMapsApiKey: GOOGLE_API_KEY
+    googleMapsApiKey: GOOGLE_API_KEY as string
   })
 
   const onLoad = React.useCallback((map: google.maps.Map) => {
     // bounds based on locations
+    console.log("Loaded", GOOGLE_API_KEY);
     if (locations && map) {
       /*const bounds = new google.maps.LatLngBounds();
       locations.forEach(({ position }) => bounds.extend(position));
