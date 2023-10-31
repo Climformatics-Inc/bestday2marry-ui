@@ -11,8 +11,8 @@ export interface Props {
 }
 
 export const DataTable: React.FC<Props> = (props: Props) => {
-  const { label, startDate, endDate, timeScale, type, zone = "zone6" } = props;
-  const [data, setData] = React.useState<Record<string, any>>({});
+  const { startDate, endDate, timeScale, type, zone = "zone6" } = props;
+  const [data, setData] = React.useState<Record<string, string>>({});
 
   const queryData = React.useCallback(() => {
     /*
@@ -22,32 +22,37 @@ export const DataTable: React.FC<Props> = (props: Props) => {
     const startTime = moment(startDate).format(format);
     const endTime = moment(endDate).format(format);
 
-    const url = `https://6i7vehp3glxjkfaxo4vkwe25lu0cnrhs.lambda-url.us-west-1.on.aws/predict?zone=${zone}` +
+    const url =
+      `https://6i7vehp3glxjkfaxo4vkwe25lu0cnrhs.lambda-url.us-west-1.on.aws/predict?zone=${zone}` +
       `&start_time=${startTime}` +
       `&end_time=${endTime}` +
       `&variable=${type}` +
-      `&time_scale=${timeScale}`
+      `&time_scale=${timeScale}`;
 
     console.log("URL", encodeURI(url));
-    fetch(url).then(response => {
-      return response.json();
-    }).then(data => {
-      console.log("Fetched Data", data);
-      setData(data);
-    }).catch(e => {
-      console.log("Bummer... ", e);
-    })
-  }, [startDate, endDate, zone, timeScale])
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((responseData) => {
+        console.log("Fetched Data", responseData);
+        setData(responseData);
+      })
+      .catch((e) => {
+        console.log("Bummer... ", e);
+      });
+  }, [startDate, endDate, zone, type, timeScale]);
 
   React.useEffect(() => {
     queryData();
-  }, [startDate, endDate, timeScale, zone])
+  }, [queryData]);
 
-
-  return <div>
-    <h3>Climformatic's Amazing Data for {type}</h3>
-    <pre>{data && JSON.stringify(data, null, 4)}</pre>
-  </div>
+  return (
+    <div>
+      <h3>Climformatic&apos;s Amazing Data for {type}</h3>
+      <pre>{data && JSON.stringify(data, null, 4)}</pre>
+    </div>
+  );
 };
 
 export default DataTable;

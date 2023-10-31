@@ -10,11 +10,13 @@ export interface Props {
 export const Property: React.FC<Props> = (props: Props) => {
   const { children, label, hint } = props;
 
-  return <div className={propertyStyles.property}>
-    <label className={propertyStyles.label}>{label}:</label>
-    {children}
-    {hint && <div className={propertyStyles.hint}>{hint}</div>}
-  </div>
+  return (
+    <div className={propertyStyles.property}>
+      <label className={propertyStyles.label}>{label}:</label>
+      {children}
+      {hint && <div className={propertyStyles.hint}>{hint}</div>}
+    </div>
+  );
 };
 
 export default Property;
